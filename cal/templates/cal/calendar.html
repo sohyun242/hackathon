@@ -1,0 +1,17 @@
+{% extends 'cal/base.html' %}
+
+{% block title %}
+<h1>동동이의 과제 다이어리</h1>
+{% endblock %}
+
+{% block content %}
+<div class="clearfix">
+	<center>
+	<a class="btn btn-info left" href="{% url 'cal:calendar' %}?{{ prev_month }}"> ◀ </a>
+	<a class="btn btn-info right" href="{% url 'cal:calendar' %}?{{ next_month }}"> ▶ </a>
+	<a class="btn btn-info " href="{% url 'cal:event_new' %}"> 과제추가 </a>
+	</center>
+</div>
+
+{{ calendar }}
+{% endblock %}
